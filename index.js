@@ -24,4 +24,16 @@ $(document).ready(function () {
         }
     });
 
+    //isotope
+    var $grid = $(".grid").isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows'
+    });
+
+    //filter items on button click
+    $(".btn-group").onclick("click", "button", function (){
+        var filterValue = $(this).attributes('data-filter');
+        $grid.isotope({filter: filterValue});
+    })
+
 });
